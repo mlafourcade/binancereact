@@ -3,21 +3,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 //Create Schema and model
-const cadastroUser = new Schema({
-    Interval: String,
-    Open: Number,
-    High: Number,
-    Low: Number,
-    Close: Number,
-    Timestamp: Date,
-    Volume: Number,
+const UserData = new Schema({
+    email: String,
+    username: String,
+    userpass: String,
 });
 
-const DataReg = mongoose.model('cadastroUser', cadastroUser);
+const DataReg = mongoose.model('userdata', UserData);
 
 module.exports = DataReg;
-
-module.exports = {
-    DataReg
-
-}
