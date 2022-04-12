@@ -16,21 +16,31 @@ import EditUser from "../public/client/admin/users/editusers";
 import SignUpUser from "../public/client/admin/users/signupusers";
 
 import HomePage from "../public/client/home/home";
+
+import CustonForm from "../public/client/form/custonform"; 
+
 import ProductDetails from "../public/client/products/detailsproducts";
+
+import Login from "../public/client/login/login";
+
 import { Button, ThemeProvider } from "@mui/material";
 import { LightTheme } from "../shared/themes";
+import { DarkTheme } from "../shared/themes";
 
+import { ContextData } from "../shared/contexts";
 
 export default function SetRoutes() {
 
     return (
 
-        <ThemeProvider theme={LightTheme}>
+        <ThemeProvider theme={DarkTheme}>
             <Router>
                 <nav>
                     <Link to="/"> HomePage </Link>
                     <Link to="admin/user"> User </Link>
                     <Link to="admin/products"> Product </Link>
+                    <Link to="login"> Login </Link>
+                    <Link to="form"> Form </Link>
                 </nav>
                 <Routes>
                     {/* Rota Client */}
@@ -47,6 +57,8 @@ export default function SetRoutes() {
                     <Route path="/admin/user/signup" element={<SignUpUser />}/>
                     <Route path="/admin/user/edit/:idProduct" element={<EditUser />}/>
 
+                    <Route path="/form" element={<CustonForm />}/>
+                    <Route path="/login" element={<Login />}/>
                     <Route path="/test" element={<Button variant="contained" color="primary">Teste</Button>}/>
 
                     <Route path="*" element={<Navigate to="/HomePage" />}/>
