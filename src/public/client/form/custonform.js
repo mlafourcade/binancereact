@@ -1,13 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { ContextData } from "../../../shared/contexts";
 
 export default function CustonForm(){
+
+    const { submit } = useContext(ContextData);
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log("dados", {name, email})
+        console.log("Dados Form", {name, email})
+
+        submit({name,email})
     }
 
     return (

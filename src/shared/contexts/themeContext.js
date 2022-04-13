@@ -1,7 +1,25 @@
-
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 export const ContextData = createContext();
+
+export const CustonProvider = ({ children }) => {
+
+    const [name, setName] = useState();
+    const [email, setEmail] = useState();
+
+    const handleData = ({ name, email }) => {
+        console.log("Dados Context", {name, email});
+
+        setName(name);
+        setEmail(email);
+    }
+
+    return (
+        <ContextData.Provider value={{name, email, submit:handleData}}>
+            { children }
+        </ContextData.Provider>
+    )
+}
 
 
 

@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 //npm install react-router-dom@5.2.0
 //import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import { BrowserRouter as Router, Link, Routes, Route, Navigate } from "react-router-dom";
 
-import Dashboard from "../public/client/admin/dashboard/dasboard";
+import { Dashboard } from "../public/client/admin/dashboard/dasboard";
 
 import Product from "../public/client/admin/products/products";
 import EditProduct from "../public/client/admin/products/editproducts";
@@ -26,8 +26,6 @@ import Login from "../public/client/login/login";
 import { Button, ThemeProvider } from "@mui/material";
 import { LightTheme } from "../shared/themes";
 import { DarkTheme } from "../shared/themes";
-
-import { ContextData } from "../shared/contexts";
 
 export default function SetRoutes() {
 

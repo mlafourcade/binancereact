@@ -1,15 +1,19 @@
-import React from "react";
-
 import SetRoutes from "./routes/routes";
 import ListaDeNotas from "./components/listadenotas";
+import { Dashboard } from "./public/client/admin/dashboard/dasboard";
+
+import { CustonProvider } from "./shared/contexts";
 
 export const App = () => {
+
   return (
+
     <div className="App">
-
-      <SetRoutes />
-      <ListaDeNotas />
-
+      <CustonProvider>
+        <Dashboard />
+        <SetRoutes />
+        <ListaDeNotas />
+      </CustonProvider>
     </div>
   );
 }
