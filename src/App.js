@@ -2,18 +2,18 @@ import SetRoutes from "./routes/routes";
 import ListaDeNotas from "./components/listadenotas";
 import { Dashboard } from "./public/client/admin/dashboard/dasboard";
 
-import { CustonProvider } from "./shared/contexts";
+import { AppThemeProvider, CustonProvider } from "./shared/contexts";
 
 export const App = () => {
 
   return (
 
     <div className="App">
-      <CustonProvider>
+      <AppThemeProvider>
         <Dashboard />
         <SetRoutes />
         <ListaDeNotas />
-      </CustonProvider>
+      </AppThemeProvider>
     </div>
   );
 }

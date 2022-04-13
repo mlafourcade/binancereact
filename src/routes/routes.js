@@ -23,46 +23,45 @@ import ProductDetails from "../public/client/products/detailsproducts";
 
 import Login from "../public/client/login/login";
 
-import { Button, ThemeProvider } from "@mui/material";
-import { LightTheme } from "../shared/themes";
-import { DarkTheme } from "../shared/themes";
+import { Button } from "@mui/material";
+import { useAppThemeContext } from "../shared/contexts";
 
 export default function SetRoutes() {
 
+    const { toogleTheme } = useAppThemeContext();
+
     return (
 
-        <ThemeProvider theme={DarkTheme}>
-            <Router>
-                <nav>
-                    <Link to="/"> HomePage </Link>
-                    <Link to="admin/user"> User </Link>
-                    <Link to="admin/products"> Product </Link>
-                    <Link to="login"> Login </Link>
-                    <Link to="form"> Form </Link>
-                </nav>
-                <Routes>
-                    {/* Rota Client */}
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/products/:idProduct" element={<ProductDetails />}/>
+        <Router>
+            <nav>
+                <Link to="/"> HomePage </Link>
+                <Link to="admin/user"> User </Link>
+                <Link to="admin/products"> Product </Link>
+                <Link to="login"> Login </Link>
+                <Link to="form"> Form </Link>
+            </nav>
+            <Routes>
+                {/* Rota Client */}
+                <Route path="/" element={<HomePage />} />
+                <Route path="/products/:idProduct" element={<ProductDetails />}/>
 
-                    {/* Rota Admin */}
-                    <Route path="/admin" element={<Dashboard />}/>
-                    <Route path="/admin/products" element={<Product />}/>
-                    <Route path="/admin/products/signup" element={<SignUpProduct />}/>
-                    <Route path="/admin/products/edit/:idProduct" element={<EditProduct />}/>
+                {/* Rota Admin */}
+                <Route path="/admin" element={<Dashboard />}/>
+                <Route path="/admin/products" element={<Product />}/>
+                <Route path="/admin/products/signup" element={<SignUpProduct />}/>
+                <Route path="/admin/products/edit/:idProduct" element={<EditProduct />}/>
 
-                    <Route path="/admin/user" element={<Users />}/>
-                    <Route path="/admin/user/signup" element={<SignUpUser />}/>
-                    <Route path="/admin/user/edit/:idProduct" element={<EditUser />}/>
+                <Route path="/admin/user" element={<Users />}/>
+                <Route path="/admin/user/signup" element={<SignUpUser />}/>
+                <Route path="/admin/user/edit/:idProduct" element={<EditUser />}/>
 
-                    <Route path="/form" element={<CustonForm />}/>
-                    <Route path="/login" element={<Login />}/>
-                    <Route path="/test" element={<Button variant="contained" color="primary">Teste</Button>}/>
+                <Route path="/form" element={<CustonForm />}/>
+                <Route path="/login" element={<Login />}/>
+                <Route path="/test" element={<Button variant="contained" color="primary" onClick={toogleTheme}>Teste</Button>}/>
 
-                    <Route path="*" element={<Navigate to="/HomePage" />}/>
-                    
-                </Routes>
-            </Router>
-        </ThemeProvider>
+                <Route path="*" element={<Navigate to="/HomePage" />}/>
+                
+            </Routes>
+        </Router>
     )
 }
