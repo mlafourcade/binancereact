@@ -39,6 +39,9 @@ export const AppThemeProvider =  ({ children }) => {
     const [email, setEmail] = useState();
 
     const toogleTheme = useCallback(() =>{
+
+        console.log('toogleTheme', {name, email});
+
         setThemeName(oldThemeName => oldThemeName === 'light' ? 'dark' : 'light');
     }, []);
 

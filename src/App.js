@@ -19,5 +19,7 @@ export const App = () => {
 }
 
 //https://www.youtube.com/watch?v=c5qsGc5p38I
+//https://www.youtube.com/watch?v=LoorNlzqVtw&list=PL2hDwB8DzXGMgUuBmNVxy0JDvkMptphSa&index=3
+//https://www.youtube.com/watch?v=qEBoZ8lJR3k
 
 
